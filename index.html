@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Conscious Parenting — Nothing by default. Everything by choice.</title>
+  <meta name="description" content="A free, warm community of parents in Northern Ireland choosing a healthier, brighter childhood — one small, joyful step at a time. High standards, zero shame. Come as you are." />
+  <meta name="theme-color" content="#2E9E67" />
+  <meta property="og:title" content="Conscious Parenting — Nothing by default. Everything by choice." />
+  <meta property="og:description" content="A free community of parents in Northern Ireland building a childhood worth remembering — one small step at a time. No pressure to be perfect. Come as you are." />
+  <meta property="og:type" content="website" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=1" />
+  <link rel="icon" type="image/png" href="images/favicon-32.png?v=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #2E9E67;
+      --accent-dark: #1E7A4E;
+      --accent-soft: #DFF3E8;
+      --cream: #FFFDF8;
+      --warm: #FBF4E9;
+      --warm-deep: #F6E9D6;
+      --ink: #232620;
+      --ink-soft: #5E6358;
+      --dark: #1C2A22;
+      --dark-alt: #24352B;
+      --dark-text: #F4F7EF;
+      --gold: #F4B740;
+      --sky: #6FB7C9;
+      --berry: #C46B8B;
+      --plum: #8B7BC4;
+      --whatsapp: #25D366;
+      --border: rgba(35, 38, 32, 0.09);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+      --shadow-md: 0 10px 28px rgba(30,60,40,.10);
+      --shadow-lg: 0 24px 64px rgba(20,50,30,.18);
+      --radius: 14px;
+      --radius-lg: 22px;
+      --radius-pill: 100px;
+      --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.65;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; line-height: 1.12; letter-spacing: -0.015em; }
+    h1 { font-size: clamp(2.5rem, 6.2vw, 4.6rem); font-weight: 900; }
+    h2 { font-size: clamp(2rem, 4.6vw, 3.3rem); font-weight: 900; }
+    h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); font-weight: 700; }
+    p { font-size: clamp(1rem, 1.55vw, 1.16rem); }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .container-narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+    section { padding: 84px 0; }
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.76rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      padding: 8px 15px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 20px;
+    }
+    .center { text-align: center; }
+    .lead { color: var(--ink-soft); font-size: clamp(1.08rem, 1.9vw, 1.28rem); max-width: 640px; }
+    .center .lead { margin-left: auto; margin-right: auto; }
+
+    /* ─── CTA button ─── */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.06rem;
+      padding: 19px 34px;
+      border-radius: var(--radius-pill);
+      border: 3px solid var(--accent-dark);
+      box-shadow: 0 6px 0 var(--accent-dark), 0 16px 32px rgba(46,158,103,0.32);
+      transition: transform 0.16s var(--spring), box-shadow 0.16s;
+      cursor: pointer;
+    }
+    .btn-cta:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--accent-dark), 0 10px 20px rgba(46,158,103,0.36); }
+    .btn-cta:active { transform: translateY(6px); box-shadow: 0 0 0 var(--accent-dark), 0 5px 14px rgba(46,158,103,0.3); }
+    .btn-cta.large { font-size: 1.18rem; padding: 22px 42px; }
+    .btn-cta svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
+    .cta-note { margin-top: 15px; font-size: 0.92rem; color: var(--ink-soft); font-weight: 500; }
+    .cta-note strong { color: var(--ink); }
+
+    /* ─── Pre strip ─── */
+    .pre-strip {
+      background: var(--dark);
+      color: var(--dark-text);
+      text-align: center;
+      padding: 11px 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .pre-strip .dot { color: var(--gold); margin: 0 8px; }
+
+    /* ─── Hero ─── */
+    .hero { background: var(--cream); padding: 66px 0 72px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ''; position: absolute; top: -220px; right: -160px;
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -180px; left: -140px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(244,183,64,0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; position: relative; }
+    .hero h1 { margin-bottom: 22px; }
+    .hero h1 .em { color: var(--accent); }
+    .hero h1 .em2 { color: var(--gold); }
+    .hero-sub { font-size: clamp(1.08rem, 1.9vw, 1.32rem); color: var(--ink-soft); margin-bottom: 30px; max-width: 560px; }
+    .hero-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/5; background: var(--warm); }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(20,40,25,0.28) 100%); }
+    .hero-tag {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      background: rgba(255, 253, 248, 0.94); backdrop-filter: blur(6px);
+      padding: 13px 18px; border-radius: var(--radius); font-weight: 600;
+      font-size: 0.94rem; box-shadow: var(--shadow-md); z-index: 2; color: var(--ink);
+    }
+    .hero-tag strong { color: var(--accent-dark); }
+
+    /* ─── Idea trio ─── */
+    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .trio-card {
+      position: relative; background: #fff; border-radius: var(--radius-lg);
+      padding: 30px 26px; box-shadow: var(--shadow-sm);
+    }
+    .trio-card::before {
+      content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 2px;
+      background: linear-gradient(135deg, var(--tile) 0%, var(--gold) 100%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+    }
+    .trio-card .n { font-family: 'Fraunces', serif; font-weight: 900; font-size: 2.4rem; color: var(--tile); line-height: 1; margin-bottom: 12px; }
+    .trio-card h3 { margin-bottom: 8px; }
+    .trio-card p { font-size: 1rem; color: var(--ink-soft); }
+
+    /* ─── Split narrative ─── */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .split-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 5/4; }
+    .split-img img { width: 100%; height: 100%; object-fit: cover; }
+    .split p + p { margin-top: 16px; }
+    .split .lead { margin-bottom: 6px; }
+
+    /* ─── Dark beats ─── */
+    .dark { background: var(--dark); color: var(--dark-text); position: relative; overflow: hidden; }
+    .dark h2, .dark h3 { color: #fff; }
+    .dark .eyebrow { background: rgba(244,183,64,0.16); color: var(--gold); }
+    .dark .lead { color: rgba(244,247,239,0.82); }
+    .dark-bg { position: absolute; inset: 0; opacity: 0.16; }
+    .dark-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .dark .container, .dark .container-narrow { position: relative; z-index: 1; }
+
+    .manifesto-list { list-style: none; margin-top: 34px; display: grid; gap: 16px; max-width: 760px; }
+    .manifesto-list li {
+      display: flex; gap: 15px; align-items: flex-start;
+      font-size: clamp(1.02rem, 1.7vw, 1.18rem); color: rgba(244,247,239,0.92);
+    }
+    .manifesto-list .mk {
+      flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(46,158,103,0.9); display: grid; place-items: center;
+      color: #fff; font-weight: 800; font-size: 0.9rem; margin-top: 2px;
+    }
+
+    /* ─── Pillars ─── */
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 46px; }
+    .pillar {
+      position: relative; background: #fff; border-radius: var(--radius-lg);
+      padding: 30px 26px 28px; box-shadow: var(--shadow-sm);
+      transition: transform 0.2s var(--spring), box-shadow 0.2s;
+    }
+    .pillar:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .pillar::before {
+      content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 2px;
+      background: linear-gradient(135deg, var(--tile) 0%, var(--gold) 120%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+    }
+    .pillar .ico {
+      width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center;
+      font-size: 1.5rem; margin-bottom: 16px;
+      background: color-mix(in srgb, var(--tile) 15%, #fff);
+    }
+    .pillar h3 { font-size: 1.32rem; margin-bottom: 8px; }
+    .pillar p { font-size: 0.99rem; color: var(--ink-soft); }
+
+    /* ─── Alternatives (before/better) ─── */
+    .alt-wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; margin-top: 8px; }
+    .alt-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 1/1; }
+    .alt-img img { width: 100%; height: 100%; object-fit: cover; }
+    .alt-rows { display: grid; gap: 16px; }
+    .alt-row {
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px;
+      background: #fff; border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .alt-from { color: var(--ink-soft); font-size: 0.98rem; }
+    .alt-to { color: var(--ink); font-weight: 600; font-size: 0.98rem; }
+    .alt-arrow { color: var(--accent); font-weight: 800; font-size: 1.2rem; }
+
+    /* ─── Steps ─── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 46px; counter-reset: step; }
+    .step { position: relative; background: #fff; border-radius: var(--radius-lg); padding: 30px 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
+    .step .num {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff;
+      font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.3rem;
+      display: grid; place-items: center; margin-bottom: 16px;
+    }
+    .step h3 { font-size: 1.18rem; margin-bottom: 7px; }
+    .step p { font-size: 0.97rem; color: var(--ink-soft); }
+
+    /* ─── What it's NOT ─── */
+    .notgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 42px; }
+    .notcard { background: #fff; border-radius: var(--radius-lg); padding: 30px 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
+    .notcard h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+    .notcard .badge { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 1.1rem; }
+    .notcard.no .badge { background: #FCE8E8; }
+    .notcard.yes .badge { background: var(--accent-soft); }
+    .notlist { list-style: none; display: grid; gap: 13px; }
+    .notlist li { display: flex; gap: 12px; align-items: flex-start; font-size: 1rem; color: var(--ink-soft); }
+    .notlist .m { flex-shrink: 0; font-weight: 800; margin-top: 1px; }
+    .notcard.no .m { color: #D14B4B; }
+    .notcard.yes .m { color: var(--accent); }
+    .notcard.yes li { color: var(--ink); }
+
+    /* ─── Meetups (dark) ─── */
+    .meet-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+    .meet-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 5/4; }
+    .meet-img img { width: 100%; height: 100%; object-fit: cover; }
+    .meet-points { list-style: none; margin-top: 24px; display: grid; gap: 14px; }
+    .meet-points li { display: flex; gap: 12px; align-items: flex-start; color: rgba(244,247,239,0.9); font-size: 1.05rem; }
+    .meet-points .mk { color: var(--gold); font-weight: 800; margin-top: 1px; }
+
+    /* ─── Who it's for ─── */
+    .for-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 52px; align-items: center; }
+    .for-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/5; }
+    .for-img img { width: 100%; height: 100%; object-fit: cover; }
+    .for-list { list-style: none; margin-top: 22px; display: grid; gap: 13px; }
+    .for-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 1.06rem; color: var(--ink-soft); }
+    .for-list .mk { color: var(--accent); font-weight: 800; margin-top: 1px; }
+
+    /* ─── Final CTA ─── */
+    .final { background: var(--dark); text-align: center; position: relative; overflow: hidden; }
+    .final::before {
+      content: ''; position: absolute; top: -160px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 500px; background: radial-gradient(ellipse, rgba(46,158,103,0.35) 0%, transparent 70%);
+    }
+    .final h2 { color: #fff; margin-bottom: 18px; }
+    .final .lead { color: rgba(244,247,239,0.85); margin: 0 auto 34px; }
+
+    /* ─── Footer ─── */
+    footer { background: var(--dark-alt); color: rgba(244,247,239,0.72); text-align: center; padding: 40px 24px; font-size: 0.92rem; }
+    footer .brand { font-family: 'Fraunces', serif; font-weight: 900; color: #fff; font-size: 1.2rem; margin-bottom: 8px; }
+    footer .tiny { font-size: 0.82rem; opacity: 0.6; margin-top: 12px; }
+
+    /* ─── Reveal ─── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s var(--spring); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      section { padding: 62px 0; }
+      .hero { padding: 44px 0 54px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 38px; }
+      .hero-image { aspect-ratio: 16/12; max-height: 440px; }
+      .split, .alt-wrap, .meet-inner, .for-inner { grid-template-columns: 1fr; gap: 34px; }
+      .split-img, .for-img { order: -1; }
+      .trio, .pillars, .steps { grid-template-columns: 1fr; }
+      .notgrid { grid-template-columns: 1fr; }
+      .alt-img { aspect-ratio: 16/10; }
+    }
+    @media (min-width: 601px) and (max-width: 900px) {
+      .trio, .pillars { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 460px) {
+      .btn-cta { font-size: 0.98rem; padding: 17px 26px; width: 100%; justify-content: center; }
+      .alt-row { grid-template-columns: 1fr; text-align: center; gap: 6px; }
+      .alt-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ PRE-STRIP ══ -->
+  <div class="pre-strip">
+    A free community for parents <span class="dot">•</span> Northern Ireland <span class="dot">•</span> Come as you are
+  </div>
+
+  <!-- ══ 1. HERO (cream) ══ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Conscious Parenting</span>
+          <h1>Nothing by <span class="em">default</span>.<br>Everything by <span class="em2">choice</span>.</h1>
+          <p class="hero-sub">A warm circle of parents choosing a brighter, healthier childhood for our little ones — questioning the things everyone just accepts, and swapping them for something better. One small, joyful step at a time.</p>
+          <a class="btn-cta large" href="https://chat.whatsapp.com/PLACEHOLDER-INVITE-LINK" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.09c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.86-4.23-5.01-4.43-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37.2 0 .39.002.56.01.18.008.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.12.07.72-.17 1.4z"/></svg>
+            Join the Community — Free
+          </a>
+          <p class="cta-note"><strong>Free forever.</strong> No experience needed. No pressure to be perfect.</p>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1476234251651-f353703a034d?w=1000&q=72" alt="A parent lifting a laughing child into the golden evening light" loading="eager" />
+          <div class="hero-tag">A childhood worth remembering — <strong>built together</strong>, near you.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 2. THE BIG IDEA (warm) ══ -->
+  <section style="background:var(--warm);">
+    <div class="container center">
+      <span class="eyebrow reveal">The whole idea, in three lines</span>
+      <h2 class="reveal">We question everything — kindly.</h2>
+      <p class="lead reveal">So much of childhood runs on autopilot: the food, the screens, the stuff, the schedule. We simply pause, ask “is there a better way?”, and — together — start choosing on purpose.</p>
+      <div class="trio">
+        <div class="trio-card reveal" style="--tile:var(--accent);">
+          <div class="n">01</div>
+          <h3>Extreme love, gentle pace</h3>
+          <p>Big dreams for our kids’ health, minds and spirit — reached by changing one small thing at a time. It doesn’t matter where you begin.</p>
+        </div>
+        <div class="trio-card reveal" style="--tile:var(--sky);">
+          <div class="n">02</div>
+          <h3>Better, not less</h3>
+          <p>We don’t take the joy away — we upgrade it. Homemade ice cream that tastes better than the tub. Real cake. Play that beats any screen.</p>
+        </div>
+        <div class="trio-card reveal" style="--tile:var(--berry);">
+          <div class="n">03</div>
+          <h3>Together, near you</h3>
+          <p>Real parents meeting in real parks across Northern Ireland — so our children grow up in this way of being, side by side.</p>
+        </div>
+      </div>
+      <div class="center" style="margin-top:44px;">
+        <a class="btn-cta" href="https://chat.whatsapp.com/PLACEHOLDER-INVITE-LINK" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.09c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.86-4.23-5.01-4.43-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37.2 0 .39.002.56.01.18.008.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.12.07.72-.17 1.4z"/></svg>
+          Join the Community — Free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3. THE GENTLE AWAKENING (cream) ══ -->
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div class="split">
+        <div>
+          <span class="eyebrow reveal">Where we all begin</span>
+          <h2 class="reveal">You don’t have to change everything. Just one thing.</h2>
+          <p class="lead reveal">Most of us were handed a world of defaults — the sugary snack, the endless screen, the plastic everything — before we ever stopped to ask if it was good for them.</p>
+          <p class="reveal">There’s no shame in that. It’s simply where the story starts. Waking up to it means there are old patterns to unravel, and that takes time — a bag of shopping, a bedtime, a Saturday morning at a time.</p>
+          <p class="reveal">So we start where we are. We swap one food. We add one walk. We read one better book. We keep the win, and then we choose the next one. Over months and years, that quietly becomes a childhood our kids will never forget — and we do it shoulder to shoulder, cheering each other on.</p>
+        </div>
+        <div class="split-img reveal">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=850&q=72" alt="A happy child running freely through sunlit green woodland" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4. MANIFESTO (dark beat 1) ══ -->
+  <section class="dark">
+    <div class="dark-bg"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=60" alt="" loading="lazy" /></div>
+    <div class="container-narrow center">
+      <span class="eyebrow reveal">What we believe</span>
+      <h2 class="reveal">Build childhood from first principles.</h2>
+      <p class="lead reveal" style="margin:0 auto;">We take the best of everything humanity has figured out about raising bright, kind, healthy children — and leave the dogma behind.</p>
+      <ul class="manifesto-list reveal" style="margin-left:auto;margin-right:auto;text-align:left;">
+        <li><span class="mk">✦</span><span>Nothing gets a free pass because “that’s just what everyone does.” We decide on purpose.</span></li>
+        <li><span class="mk">✦</span><span>Healthy body, bright mind, happy spirit — every child deserves all three, on any budget.</span></li>
+        <li><span class="mk">✦</span><span>We borrow the best from Montessori, Waldorf, Reggio, forest school and more — take the practice, skip the ideology.</span></li>
+        <li><span class="mk">✦</span><span>High standards, zero shame. We celebrate every step forward and never look down on where anyone starts.</span></li>
+        <li><span class="mk">✦</span><span>Make it fun. If it isn’t joyful for the children — and for us — we’re doing it wrong.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ 5. PILLARS (cream) ══ -->
+  <section style="background:var(--cream);">
+    <div class="container center">
+      <span class="eyebrow reveal">What we talk about</span>
+      <h2 class="reveal">Seven parts of a childhood — reimagined.</h2>
+      <p class="lead reveal">Each one is a conversation in the community. Pick the corner that excites you and start there.</p>
+      <div class="pillars">
+        <div class="pillar reveal" style="--tile:var(--accent);">
+          <div class="ico">🍎</div>
+          <h3>Real Food & Bright Bodies</h3>
+          <p>Home-cooked-first eating that keeps teeth, skin and energy glowing — and usually costs less, not more.</p>
+        </div>
+        <div class="pillar reveal" style="--tile:var(--sky);">
+          <div class="ico">🌙</div>
+          <h3>Rest & Materials</h3>
+          <p>Better sleep, and a low-tox home: what they sleep on, what they wear, the air they breathe.</p>
+        </div>
+        <div class="pillar reveal" style="--tile:var(--gold);">
+          <div class="ico">🌳</div>
+          <h3>Wild & Free Play</h3>
+          <p>Outdoors, parks and boredom-that-sparks-play — a screen-light childhood full of real adventure.</p>
+        </div>
+        <div class="pillar reveal" style="--tile:var(--berry);">
+          <div class="ico">📚</div>
+          <h3>Learning That Lights Them Up</h3>
+          <p>The best of the world’s great schools, borrowed and done cheaply at home — following the child.</p>
+        </div>
+        <div class="pillar reveal" style="--tile:var(--plum);">
+          <div class="ico">💛</div>
+          <h3>The Conscious Parent</h3>
+          <p>How we stay calm, process our own patterns, and raise them on purpose without the guilt.</p>
+        </div>
+        <div class="pillar reveal" style="--tile:var(--accent);">
+          <div class="ico">🤝</div>
+          <h3>Our Tribe</h3>
+          <p>Regular meetups in Northern Ireland so our children grow up together in this beautiful way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6. INSPIRING ALTERNATIVES (warm) ══ -->
+  <section style="background:var(--warm);">
+    <div class="container">
+      <div class="center" style="margin-bottom:14px;">
+        <span class="eyebrow reveal">The heart of it</span>
+        <h2 class="reveal">We don’t take joy away. We make it better.</h2>
+        <p class="lead reveal" style="margin:0 auto;">This isn’t about denying children lovely things. It’s about swapping the poor version for a genuinely better one — and watching them love it more.</p>
+      </div>
+      <div class="alt-wrap">
+        <div class="alt-img reveal">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=72" alt="A colourful spread of fresh, real, whole foods on a table" loading="lazy" />
+        </div>
+        <div class="alt-rows">
+          <div class="alt-row reveal"><span class="alt-from">Additive-loaded freezer ice cream</span><span class="alt-arrow">→</span><span class="alt-to">Homemade ice cream that actually tastes better</span></div>
+          <div class="alt-row reveal"><span class="alt-from">A shop birthday cake full of dyes</span><span class="alt-arrow">→</span><span class="alt-to">A real cake, made with love at home</span></div>
+          <div class="alt-row reveal"><span class="alt-from">Another hour on the tablet</span><span class="alt-arrow">→</span><span class="alt-to">An hour at the park with friends</span></div>
+          <div class="alt-row reveal"><span class="alt-from">A pile of plastic that breaks</span><span class="alt-arrow">→</span><span class="alt-to">A few open-ended toys they adore for years</span></div>
+          <div class="alt-row reveal"><span class="alt-from">Doing it all alone, unsure</span><span class="alt-arrow">→</span><span class="alt-to">A community figuring it out with you</span></div>
+        </div>
+      </div>
+      <div class="center" style="margin-top:46px;">
+        <a class="btn-cta" href="https://chat.whatsapp.com/PLACEHOLDER-INVITE-LINK" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.09c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.86-4.23-5.01-4.43-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37.2 0 .39.002.56.01.18.008.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.12.07.72-.17 1.4z"/></svg>
+          Join the Community — Free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 7. HOW IT WORKS (cream) ══ -->
+  <section style="background:var(--cream);">
+    <div class="container center">
+      <span class="eyebrow reveal">How it works</span>
+      <h2 class="reveal">Joining is the easy part.</h2>
+      <p class="lead reveal">No forms to fill for hours. No fee. Just a warm WhatsApp community and a standing invitation.</p>
+      <div class="steps">
+        <div class="step reveal"><div class="num">1</div><h3>Join the group</h3><p>Tap the button and hop into our free WhatsApp community. Say a quick hello.</p></div>
+        <div class="step reveal"><div class="num">2</div><h3>Meet the parents</h3><p>Kind, like-minded families, all thinking about the same beautiful questions.</p></div>
+        <div class="step reveal"><div class="num">3</div><h3>Try one small swap</h3><p>Pick one tiny upgrade this week. Share how it went. Steal everyone else’s ideas.</p></div>
+        <div class="step reveal"><div class="num">4</div><h3>Come to a meetup</h3><p>Join us at a park nearby and let the children play and grow up together.</p></div>
+      </div>
+      <div style="margin-top:44px;">
+        <a class="btn-cta large" href="https://chat.whatsapp.com/PLACEHOLDER-INVITE-LINK" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.09c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.86-4.23-5.01-4.43-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37.2 0 .39.002.56.01.18.008.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.12.07.72-.17 1.4z"/></svg>
+          Join the Community — Free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 8. WHAT IT'S NOT (warm-deep) ══ -->
+  <section style="background:var(--warm-deep);">
+    <div class="container center">
+      <span class="eyebrow reveal">Let’s be clear</span>
+      <h2 class="reveal">A high bar — and the softest landing.</h2>
+      <p class="lead reveal">We hold a genuinely high standard for our children’s lives. We just refuse to make anyone feel small for where they’re starting.</p>
+      <div class="notgrid">
+        <div class="notcard no reveal">
+          <h3><span class="badge">🚫</span> What it’s not</h3>
+          <ul class="notlist">
+            <li><span class="m">✕</span> No guilt trips and no judging where you begin</li>
+            <li><span class="m">✕</span> No purity tests or “good parent / bad parent” scoring</li>
+            <li><span class="m">✕</span> No pressure to spend money you don’t have</li>
+            <li><span class="m">✕</span> No preaching, no experts-only club, no perfect people</li>
+            <li><span class="m">✕</span> No glorifying the junk that harms our kids</li>
+          </ul>
+        </div>
+        <div class="notcard yes reveal">
+          <h3><span class="badge">🌱</span> What it is</h3>
+          <ul class="notlist">
+            <li><span class="m">✓</span> Warmth for wherever you are on the journey</li>
+            <li><span class="m">✓</span> Real, doable, cost-effective upgrades</li>
+            <li><span class="m">✓</span> Celebrating every single step forward</li>
+            <li><span class="m">✓</span> Honest, high-minded, exciting conversation</li>
+            <li><span class="m">✓</span> Better versions of all the good things in childhood</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 9. MEETUPS (dark beat 2) ══ -->
+  <section class="dark">
+    <div class="container">
+      <div class="meet-inner">
+        <div class="meet-img reveal">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=72" alt="A circle of happy children lying together on the grass, heads touching" loading="lazy" />
+        </div>
+        <div>
+          <span class="eyebrow reveal">Real life, in real parks</span>
+          <h2 class="reveal">Our children, growing up together.</h2>
+          <p class="lead reveal">The online chat is lovely — but the magic is in person. We gather across Northern Ireland so our kids build real friendships in this conscious way of being.</p>
+          <ul class="meet-points reveal">
+            <li><span class="mk">✦</span> Relaxed get-togethers in parks and green spaces near you</li>
+            <li><span class="mk">✦</span> Free play, real food, and parents who actually get it</li>
+            <li><span class="mk">✦</span> Seasonal gatherings the children look forward to all year</li>
+            <li><span class="mk">✦</span> Friendships — for them and for you — that last</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 10. WHO IT'S FOR (cream) ══ -->
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div class="for-inner">
+        <div class="for-img reveal">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=780&q=72" alt="A joyful child laughing outdoors in the sunshine" loading="lazy" />
+        </div>
+        <div>
+          <span class="eyebrow reveal">Is this you?</span>
+          <h2 class="reveal">You don’t need to know a thing.</h2>
+          <p class="lead reveal">You just need to care, and to be a little curious about a better way. That’s the whole entry requirement.</p>
+          <ul class="for-list reveal">
+            <li><span class="mk">✓</span> You sense there’s a healthier, happier way to raise your children</li>
+            <li><span class="mk">✓</span> You’re ready to change one small thing — not overhaul your whole life overnight</li>
+            <li><span class="mk">✓</span> You’d love kind, switched-on parents to figure it out with</li>
+            <li><span class="mk">✓</span> You want your kids to look back and feel they truly lived</li>
+          </ul>
+          <div style="margin-top:30px;">
+            <a class="btn-cta" href="https://chat.whatsapp.com/PLACEHOLDER-INVITE-LINK" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.09c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.86-4.23-5.01-4.43-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37.2 0 .39.002.56.01.18.008.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.12.07.72-.17 1.4z"/></svg>
+              Join the Community — Free
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 11. FINAL CTA (dark beat 3) ══ -->
+  <section class="final">
+    <div class="container-narrow">
+      <span class="eyebrow reveal">Come as you are</span>
+      <h2 class="reveal">Start where you stand.<br>The rest we’ll figure out together.</h2>
+      <p class="lead reveal">One small step, one warm community, one childhood at a time. It’s free, it’s friendly, and there’s a seat saved for you.</p>
+      <a class="btn-cta large reveal" href="https://chat.whatsapp.com/PLACEHOLDER-INVITE-LINK" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.09c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.86-4.23-5.01-4.43-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37.2 0 .39.002.56.01.18.008.42-.07.66.5.24.58.82 2.01.89 2.16.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.12.07.72-.17 1.4z"/></svg>
+        Join the Community — Free
+      </a>
+      <p class="cta-note" style="color:rgba(244,247,239,0.7);">Free forever <span class="dot" style="color:var(--gold);">•</span> Northern Ireland <span class="dot" style="color:var(--gold);">•</span> No pressure to be perfect</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">Conscious Parenting</div>
+    <div>Nothing by default. Everything by choice. Together, in Northern Ireland.</div>
+    <div class="tiny">A free community — not medical, legal or professional advice. Always do what’s right for your own family.</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
