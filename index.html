@@ -186,7 +186,7 @@
     .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 46px; }
     .pillar {
       position: relative; background: #fff; border-radius: var(--radius-lg);
-      padding: 30px 26px 28px; box-shadow: var(--shadow-sm); text-align: left;
+      box-shadow: var(--shadow-sm); text-align: left; overflow: hidden;
       transition: transform 0.2s var(--spring), box-shadow 0.2s;
     }
     .pillar:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
@@ -194,13 +194,18 @@
       content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 2px;
       background: linear-gradient(135deg, var(--tile) 0%, var(--gold) 120%);
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 4;
     }
+    .pillar-img { aspect-ratio: 16/10; overflow: hidden; }
+    .pillar-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--spring); }
+    .pillar:hover .pillar-img img { transform: scale(1.06); }
+    .pillar-body { padding: 24px 24px 26px; position: relative; }
     .pillar .ico {
       width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center;
-      font-size: 1.5rem; margin-bottom: 16px; background: color-mix(in srgb, var(--tile) 16%, #fff);
+      font-size: 1.5rem; background: #fff; box-shadow: var(--shadow-md);
+      position: absolute; top: -34px; left: 22px; border: 1px solid var(--border); z-index: 2;
     }
-    .pillar h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .pillar h3 { font-size: 1.3rem; margin: 22px 0 8px; }
     .pillar p { font-size: 0.99rem; color: var(--ink-soft); }
 
     /* ─── Steps ─── */
@@ -298,7 +303,7 @@
           <p class="cta-note"><strong>Free forever.</strong> <span class="dot">•</span> No experience needed <span class="dot">•</span> No pressure to be perfect</p>
         </div>
         <div class="hero-image">
-          <img src="https://images.unsplash.com/photo-1476234251651-f353703a034d?w=1000&q=72" alt="A parent lifting a laughing child into the warm golden evening light" loading="eager" />
+          <img src="images/hero.jpg" alt="A parent lifting a laughing child into the warm golden evening light" loading="eager" />
           <div class="hero-tag">Real families, real parks, real friendships — <strong>near you.</strong></div>
         </div>
       </div>
@@ -310,7 +315,7 @@
     <div class="container">
       <div class="split">
         <div class="split-img reveal">
-          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=780&q=72" alt="A joyful, healthy child laughing outdoors in the sunshine" loading="lazy" />
+          <img src="images/win-child.jpg" alt="A joyful, healthy child laughing outdoors in the sunshine" loading="lazy" />
         </div>
         <div>
           <span class="eyebrow reveal">The win for your child</span>
@@ -332,7 +337,7 @@
     <div class="container">
       <div class="split flip">
         <div class="split-img reveal">
-          <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=780&q=72" alt="A family together outdoors at golden hour, warm and close" loading="lazy" />
+          <img src="images/win-you.jpg" alt="A family together outdoors at golden hour, warm and close" loading="lazy" />
         </div>
         <div>
           <span class="eyebrow reveal">The win for you</span>
@@ -357,7 +362,7 @@
 
   <!-- ══ 4. WHY IT MATTERS (dark beat 1) ══ -->
   <section class="dark">
-    <div class="dark-bg"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=60" alt="" loading="lazy" /></div>
+    <div class="dark-bg"><img src="images/why-bg.jpg" alt="" loading="lazy" /></div>
     <div class="container-narrow center">
       <span class="eyebrow reveal">Why it matters</span>
       <h2 class="reveal">So much of childhood runs on autopilot.</h2>
@@ -397,7 +402,7 @@
       </div>
       <div class="alt-wrap">
         <div class="alt-img reveal">
-          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=72" alt="A colourful spread of fresh, real, whole foods on a table" loading="lazy" />
+          <img src="images/food-better.jpg" alt="A colourful spread of fresh, real, whole foods on a table" loading="lazy" />
         </div>
         <div class="alt-rows">
           <div class="alt-row reveal"><span class="alt-from">Additive-loaded freezer ice cream</span><span class="alt-arrow">→</span><span class="alt-to">Homemade ice cream that tastes better</span></div>
@@ -418,28 +423,46 @@
       <p class="lead reveal">Each one is a warm conversation in the community. Pick the corner that excites you and start there.</p>
       <div class="pillars">
         <div class="pillar reveal" style="--tile:var(--accent);">
-          <div class="ico">🍎</div><h3>Real Food & Bright Bodies</h3>
-          <p>Home-cooked-first eating that keeps teeth, skin and energy glowing — and usually costs less, not more.</p>
+          <div class="pillar-img"><img src="images/p-food.jpg" alt="A colourful, healthy home-cooked meal of fresh vegetables" loading="lazy" /></div>
+          <div class="pillar-body">
+            <div class="ico">🍎</div><h3>Real Food & Bright Bodies</h3>
+            <p>Home-cooked-first eating that keeps teeth, skin and energy glowing — and usually costs less, not more.</p>
+          </div>
         </div>
         <div class="pillar reveal" style="--tile:var(--terracotta);">
-          <div class="ico">🌙</div><h3>Rest & Materials</h3>
-          <p>Better sleep, and a low-tox home: what they sleep on, what they wear, the air they breathe.</p>
+          <div class="pillar-img"><img src="images/p-sleep.jpg" alt="A child sleeping peacefully in a cosy, natural-wood bedroom" loading="lazy" /></div>
+          <div class="pillar-body">
+            <div class="ico">🌙</div><h3>Rest & Materials</h3>
+            <p>Better sleep, and a low-tox home: what they sleep on, what they wear, the air they breathe.</p>
+          </div>
         </div>
         <div class="pillar reveal" style="--tile:var(--sage);">
-          <div class="ico">🌳</div><h3>Wild & Free Play</h3>
-          <p>Outdoors, parks and boredom-that-sparks-play — a screen-light childhood full of real adventure.</p>
+          <div class="pillar-img"><img src="images/p-play.jpg" alt="Children running and playing freely outdoors in the sunshine" loading="lazy" /></div>
+          <div class="pillar-body">
+            <div class="ico">🌳</div><h3>Wild & Free Play</h3>
+            <p>Outdoors, parks and boredom-that-sparks-play — a screen-light childhood full of real adventure.</p>
+          </div>
         </div>
         <div class="pillar reveal" style="--tile:var(--honey);">
-          <div class="ico">📚</div><h3>Learning That Lights Them Up</h3>
-          <p>The best of the world's great schools, borrowed and done cheaply at home — following the child.</p>
+          <div class="pillar-img"><img src="images/p-learn.jpg" alt="A boy happily reading a book on the grass outdoors" loading="lazy" /></div>
+          <div class="pillar-body">
+            <div class="ico">📚</div><h3>Learning That Lights Them Up</h3>
+            <p>The best of the world's great schools, borrowed and done cheaply at home — following the child.</p>
+          </div>
         </div>
         <div class="pillar reveal" style="--tile:var(--rose);">
-          <div class="ico">💛</div><h3>The Conscious Parent</h3>
-          <p>How we stay calm, process our own patterns, and raise them on purpose without the guilt.</p>
+          <div class="pillar-img"><img src="images/p-parent.jpg" alt="A parent tenderly holding their child in warm evening light" loading="lazy" /></div>
+          <div class="pillar-body">
+            <div class="ico">💛</div><h3>The Conscious Parent</h3>
+            <p>How we stay calm, process our own patterns, and raise them on purpose without the guilt.</p>
+          </div>
         </div>
         <div class="pillar reveal" style="--tile:var(--gold);">
-          <div class="ico">🤝</div><h3>Our Tribe</h3>
-          <p>Regular meetups in Northern Ireland so our children grow up together in this beautiful way.</p>
+          <div class="pillar-img"><img src="images/p-tribe.jpg" alt="Two children playing happily together on the grass in a park" loading="lazy" /></div>
+          <div class="pillar-body">
+            <div class="ico">🤝</div><h3>Our Tribe</h3>
+            <p>Regular meetups in Northern Ireland so our children grow up together in this beautiful way.</p>
+          </div>
         </div>
       </div>
       <div style="margin-top:46px;">
@@ -487,7 +510,7 @@
     <div class="container">
       <div class="meet-inner">
         <div class="meet-img reveal">
-          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=72" alt="A circle of happy children lying together on the grass, heads touching" loading="lazy" />
+          <img src="images/meetups.jpg" alt="A circle of happy children lying together on the grass, heads touching" loading="lazy" />
         </div>
         <div>
           <span class="eyebrow reveal">Real life, in real parks</span>
